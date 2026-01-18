@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_FILE="$HOME/.everyday_backup_config.cfg"
+CONFIG_FILE="$HOME/scripts.sh/.everyday_backup_config.cfg"
 COUNT=$(echo "$BACKUPS" | wc -l)
 
 if [ -f "$CONFIG_FILE" ]; then
