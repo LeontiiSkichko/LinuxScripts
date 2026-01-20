@@ -9,6 +9,6 @@ else
     exit 1
 fi
 
-ls -t "$BACKUP_TO" | tail -n +$MAX_VALUE | xargs -I {} rm -rf "$BACKUP_TO/{}"
+ls -t "$BACKUP_TO" | grep ".tar.gz" | tail -n +$MAX_VALUE | xargs -I {} rm -rf "$BACKUP_TO/{}"
 tar -pczf "$BACKUP_TO/$(date +%Y-%m-%d-%H:%M:%S).tar.gz" -C "$(dirname "$WHAT_TAKE")" "$(basename "$WHAT_TAKE")"
 echo "Backup completed: $(date +%Y-%m-%d-%H:%M:%S).tar.gz"
