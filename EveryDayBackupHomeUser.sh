@@ -14,6 +14,10 @@ if [ -z "$backup_to" ]; then
     backup_to=$(pwd)/BackupsHere
 fi
 
+if [ -z "$WHAT_TAKE" ]; then
+    echo "So, what I need backup?"
+    exit 1
+fi
 ((max_value++))
 
 tar --same-owner -pczf "$backup_to/EDBHU$(date +%Y-%m-%d-%H:%M:%S).tar.gz" -C "$(dirname "$WHAT_TAKE")" "$(basename "$WHAT_TAKE")"
