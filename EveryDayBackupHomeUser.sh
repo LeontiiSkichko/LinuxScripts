@@ -9,8 +9,13 @@ else
     exit 1
 fi
 
+if [ -z "$backup_to" ]; then
+    mkdir -p BackupsHere
+    backup_to=$(pwd)/BackupsHere
+fi
+
 ((max_value++))
 
-ls -t "$BACKUP_TO" | grep "EDBHU.*.tar.gz" | tail -n +$max_value | xargs -I {} rm -r "$BACKUP_TO/{}"
-tar --same-owner -pczf "$BACKUP_TO/EDBHU$(date +%Y-%m-%d-%H:%M:%S).tar.gz" -C "$(dirname "$WHAT_TAKE")" "$(basename "$WHAT_TAKE")"
+tar --same-owner -pczf "$backup_to/EDBHU$(date +%Y-%m-%d-%H:%M:%S).tar.gz" -C "$(dirname "$WHAT_TAKE")" "$(basename "$WHAT_TAKE")"
+ls -t "$backup_to" | grep "EDBHU.*.tar.gz" | tail -n +$max_value | xargs -I {} rm -r "$backup_to/{}"
 echo "Backup completed: EDBHU$(date +%Y-%m-%d-%H:%M:%S).tar.gz"
