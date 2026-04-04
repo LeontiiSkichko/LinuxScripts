@@ -8,7 +8,9 @@ backup.cfg - Here you write what "WHAT_TAKE", where "backup to" should be copied
 
 After configuring backup.cfg, grant the script permissions:
 
-chmod 755 /home/MY_USER/LinuxScripts-main/EDBHUinstaller.sh chmod 755 /home/MY_USER/LinuxScripts-main/EveryDayBackupHomeUser.sh
+chmod 755 /home/MY_USER/LinuxScripts-main/EDBHUinstaller.sh
+
+chmod 755 /home/MY_USER/LinuxScripts-main/EveryDayBackupHomeUser.sh
 
 Run the script with the command
 
