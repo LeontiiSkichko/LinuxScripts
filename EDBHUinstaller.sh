@@ -1,8 +1,8 @@
 #!/bin/bash
 
+path_to_main="$(pwd)"
 mkdir EDBHU $HOME/.config/
-mv backup.cfg $HOME/.config/EDBHU/
 
-mkdir LinuxScriptEDBHU $HOME/
-mv EveryDayBackupHomeUser.sh $HOME/LinuxScriptEDBHU/
-mv .gitignore $HOME/LinuxScriptEDBHU/
+cd "$path_to_main"
+mv backup.cfg $HOME/.config/EDBHU/
+mv EveryDayBackupHomeUser.sh /etc/cron.daily/
