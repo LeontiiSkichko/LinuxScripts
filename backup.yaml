@@ -1,0 +1,7 @@
+WHAT_TAKE: 
+  - "/home/devops/testBackupScript"
+  - ""
+  - ""
+BACKUP_TO: ""
+MAX_VALUE: 3
+FILE_NAME: "EDBHU"

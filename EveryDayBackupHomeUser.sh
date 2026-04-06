@@ -1,35 +1,43 @@
 #!/bin/bash
 
-CONFIG_FILE="$HOME/.config/EDBHU/backup.cfg"
-TIME="EDBHU$(date +%Y-%m-%d-%H-%M-%S)"
+YAML_FILE="$HOME/.config/EDBHU/backup.yaml"
+TIME="$(date +%Y-%m-%d-%H-%M-%S)"
 
-if [ -f "$CONFIG_FILE" ]; then
-    source "$CONFIG_FILE"
+if [ -f "$YAML_FILE" ]; then
+    FILE_NAME=$(yq ".FILE_NAME" backup.yaml)
+    MAX_VALUE=$(yq ".MAX_VALUE" backup.yaml)
+    BACKUP_TO=$(yq ".BACKUP_TO" backup.yaml)
+    WHAT_TAKE=$(yq ".WHAT_TAKE[]" backup.yaml)
 else
-    echo "No config - no problem?"
+    echo "YAML_FILE is not found."
     exit 1
 fi
 
-if [ -z "$backup_to" ]; then
+if [ -z "$BACKUP_TO" ]; then
     mkdir -p BackupsHere
-    backup_to=$(pwd)/BackupsHere
+    BACKUP_TO=$(pwd)/BackupsHere
 fi
 
-for item in "${WHAT_TAKE[@]}"; do
-    if [ -n "$item" ]; then
-	if [ -e "$item" ]; then
-            clean_list+=( "$item" )
+for ITEM in "${WHAT_TAKE[@]}"; do
+    if [ -n "$ITEM" ]; then
+	if [ -e "$ITEM" ]; then
+            CLEAN_LIST+=( "$ITEM" )
         fi
     fi
 done
 
-if [ -z "$clean_list" ]; then
-    echo "So, what I need backup?"
-    exit 1
+if [ -z "$CLEAN_LIST" ]; then
+    echo "Target backup file is missing."
+    exit 2
 fi
 
-((max_value++))
+if [ -z "$MAX_VALUE" ]; then
+    echo "Either the MAX_VALUE variable is not defined, or its value is not specified."
+    exit 3
+fi
 
-tar --same-owner -pczf "$backup_to/"$TIME".tar.gz" -P "${clean_list[@]}"
-ls -t "$backup_to" | grep "EDBHU.*.tar.gz" | tail -n +$max_value | xargs -I {} rm -r "$backup_to/{}"
-echo "Backup completed: "$TIME".tar.gz"
+((MAX_VALUE++))
+
+tar --same-owner -pczf "$BACKUP_TO/"$FILE_NAME""$TIME".tar.gz" -P "${CLEAN_LIST[@]}"
+ls -t "$BACKUP_TO" | grep ""$FILE_NAME".*.tar.gz" | tail -n +$MAX_VALUE | xargs -I {} rm -r "$BACKUP_TO/{}"
+echo "Backup completed: "$FILE_NAME""$TIME".tar.gz"
