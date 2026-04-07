@@ -30,13 +30,15 @@ FILE_NAME: Specify a prefix for the backups.
 
 An example of a finished file is presented below.
 
-`WHAT_TAKE:` 
-`  - "/home/USERNAME/Backup/TEST"`
-`  - "/home/USERNAME/Backup1/TEST1"`
-`  - "/home/USERNAME/Backup2/TEST2"`
-`BACKUP_TO: "home/USERNAME/Backups"`
-`MAX_VALUE: 3`
-`FILE_NAME: "EDBHU"`
+```yaml
+WHAT_TAKE:
+  - "/home/USERNAME/Backup/TEST"
+  - "/home/USERNAME/Backup1/TEST1"
+  - "/home/USERNAME/Backup2/TEST2"
+BACKUP_TO: "home/USERNAME/Backups"
+MAX_VALUE: 3
+FILE_NAME: "EDBHU"
+```
 
 ./EDBHUistaller.sh
 
