@@ -6,7 +6,7 @@ A script for daily backup of one or more folders into a single archive.
 
 ### Clone the repository from Git.
 
-git clone https://github.com/LeontiiSkichko/LinuxScripts.git
+`git clone https://github.com/LeontiiSkichko/LinuxScripts.git`
 
 ### Go to the cloned folder from Git
 
