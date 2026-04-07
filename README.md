@@ -28,7 +28,7 @@ MAX_VALUE: The maximum number of backups to store.
 
 FILE_NAME: Specify a prefix for the backups.
 
-An example of a finished file is presented below.
+### An example of a finished file is presented below.
 
 ```yaml
 WHAT_TAKE:
@@ -40,6 +40,8 @@ MAX_VALUE: 3
 FILE_NAME: "EDBHU"
 ```
 
+### Run the installer
+
 ./EDBHUistaller.sh
 
-After running the installer, the folder where the project was originally located can be deleted
+### After running the installer, the folder where the project was originally file can be deleted
