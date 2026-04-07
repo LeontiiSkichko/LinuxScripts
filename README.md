@@ -42,6 +42,6 @@ FILE_NAME: "EDBHU"
 
 ### Run the installer
 
-./EDBHUistaller.sh
+`./EDBHUistaller.sh`
 
 ### After running the installer, the folder where the project was originally file can be deleted
