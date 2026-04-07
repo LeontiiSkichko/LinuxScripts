@@ -20,13 +20,21 @@ A script for daily backup of one or more folders into a single archive.
 
 ### Setting up backup.yaml
 
-WHAT_TAKE: The full path to the folder to add to the archive. If you need to add more than one folder to a single archive, specify multiple paths.
+#### WHAT_TAKE:
 
-BACKUP_TO: The path to the folder for storing backups.
+The full path to the folder to add to the archive. If you need to add more than one folder to a single archive, specify multiple paths.
 
-MAX_VALUE: The maximum number of backups to store.
+#### BACKUP_TO:
 
-FILE_NAME: Specify a prefix for the backups.
+The path to the folder for storing backups.
+
+#### MAX_VALUE:
+
+The maximum number of backups to store.
+
+#### FILE_NAME:
+
+Specify a prefix for the backups.
 
 ### An example of a finished file is presented below.
 
