@@ -10,13 +10,13 @@ git clone https://github.com/LeontiiSkichko/LinuxScripts.git
 
 ### Go to the cloned folder from Git
 
-cd /home/USER_NAME/LinuxScripts-main/
+`cd /home/USER_NAME/LinuxScripts-main/`
 
 ### Granting execution rights to scripts.
 
-chmod 755 /home/USER_NAME/LinuxScripts-main/EveryDayBackupHomeUser.sh
+`chmod 755 /home/USERNAME/LinuxScripts-main/EveryDayBackupHomeUser.sh`
 
-chmod 755 /home/USER_NAME/LinuxScripts-main/EDBHUinstaller.sh
+`chmod 755 /home/USERNAME/LinuxScripts-main/EDBHUinstaller.sh`
 
 ### Setting up backup.yaml
 
@@ -30,13 +30,13 @@ FILE_NAME: Specify a prefix for the backups.
 
 An example of a finished file is presented below.
 
-WHAT_TAKE: 
-  - "/home/USERNAME/Backup/TEST"
-  - "/home/USERNAME/Backup1/TEST1"
-  - "/home/USERNAME/Backup2/TEST2"
-BACKUP_TO: "home/USERNAME/Backups"
-MAX_VALUE: 3
-FILE_NAME: "EDBHU"
+`WHAT_TAKE:` 
+`  - "/home/USERNAME/Backup/TEST"`
+`  - "/home/USERNAME/Backup1/TEST1"`
+`  - "/home/USERNAME/Backup2/TEST2"`
+`BACKUP_TO: "home/USERNAME/Backups"`
+`MAX_VALUE: 3`
+`FILE_NAME: "EDBHU"`
 
 ./EDBHUistaller.sh
 
