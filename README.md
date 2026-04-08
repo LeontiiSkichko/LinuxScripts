@@ -52,4 +52,4 @@ FILE_NAME: "EDBHU"
 
 `./EDBHUistaller.sh`
 
-### After running the installer, the folder where the project was originally file can be deleted
+### After running the installer, the folder where the project was originally can be deleted
